@@ -29,8 +29,9 @@ public:
     bool operator==(Rational);
     //הפונקציות להלן הינן פונקציות חברות
     //לא שייכות למחלקה
-    friend Rational operator*(Rational, int); 
+    Rational operator*(int);
     friend Rational operator*(int, Rational);
+    friend int multi(Rational,Rational);
     //input/output
     friend ostream &operator<<(ostream &os, Rational num);
     friend istream &operator>>(istream &is, Rational &num);

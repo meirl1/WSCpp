@@ -46,14 +46,14 @@ bool Rational::operator==(Rational num){
     return mone == num.getMone() &&
            mechane == num.getMechane();
 }
-Rational operator*(Rational rat, int num){
+Rational Rational::operator*(int num){
     Rational tmp;
-    tmp.setMone(rat.mone * num);
-    tmp.setMechane(rat.mechane * num);
+    tmp.setMone(mone * num);
+    tmp.setMechane(mechane * num);
     return tmp;
 }
 Rational operator*(int num, Rational rat){
-    Rational tmp = operator*(rat, num);
+    Rational tmp = rat.operator*(num);
     return tmp;
 }
 ostream &operator<<(ostream &os, Rational num){
